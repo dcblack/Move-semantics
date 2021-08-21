@@ -15,5 +15,5 @@ std::string string (const T& v, const std::string& sep=" "s) {
         // Remove trailing separator
         result.erase(result.rfind(sep));
     }
-    return std::move(result);
+    return result;
 }
