@@ -5,13 +5,14 @@
  */
 
 #include <string>
-#include <cstdio>
-#include <iostream>
 #include <sstream>
 
+// Display pointer, naming of containing object (i.e., the parent), and a simple message.
+#include <iostream>
 #define NOISE1(mesg) std::cout << "DEBUG{" << this << ": " << parent << ' ' << mesg << "}\n"
 
-struct Noisy {
+class Noisy {
+public:
     using Str = std::string;
     enum [[maybe_unused]] State_t { Reset, DfltCtor, ExplCtor, Dtor, CpCtor, MvCtor, CpAsgn, MvAsgn, Idled };
     // Constructors and other special members
