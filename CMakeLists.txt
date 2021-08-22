@@ -4,8 +4,8 @@ cmake_minimum_required ( VERSION 3.11 )
 project ( useful CXX )
 
 set( CMAKE_BUILD_TYPE debug )
-include( $ENV{APPS}/cmake/BuildTypes.cmake )
-include( $ENV{APPS}/cmake/strict.cmake )
+include( cmake/BuildTypes.cmake )
+include( cmake/strict.cmake )
 
 set( TARGET_NAME useful )
 
@@ -23,3 +23,5 @@ target_compile_definitions( noisy2 PUBLIC USE_IOSTREAM NOISY2_SELFTEST )
 
 add_executable( uniqueid usage.cpp )
 target_compile_definitions( uniqueid PUBLIC USE_IOSTREAM UNIQUEID_SELFTEST )
+
+# vim:nospell
