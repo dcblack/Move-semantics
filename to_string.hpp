@@ -4,7 +4,7 @@
 #include <string>
 using namespace std::literals;
 template<typename T>
-std::string string (const T& v, const std::string& sep=" "s) {
+std::string to_string (const T& v, const std::string& sep=" "s) {
     std::string result;
     for( const auto& e:v ) {
         result += std::string(e) + sep;
