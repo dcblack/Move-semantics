@@ -52,6 +52,12 @@ private:
 #include <vector>
 int main()
 {
+
+////////////////////////////////////////////////////////////////////////////////
+#ifdef EXPECT_SELFTEST
+
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 #ifdef UNIQUEID_SELFTEST
   __________;
@@ -134,9 +140,10 @@ int main()
   }
   std::cout << std::string(80,'x') << std::endl;
   return Expect::summary("UniqId test");
-#endif
+#endif/*UNIQUEID_SELFTEST*/
+
 ////////////////////////////////////////////////////////////////////////////////
-#if defined( NOISY1_SELFTEST ) || defined( NOISY1_SELFTEST )
+#if defined( NOISY1_SELFTEST ) || defined( NOISY2_SELFTEST )
   {
     BLANK_LINE;
     __________;
@@ -200,11 +207,9 @@ int main()
     __________;
     INFO("Destroying");
   }
-#endif
+#endif/*NOISY1_SELFTEST||NOISY2_SELFTEST*/
 
-  BLANK_LINE;
   __________;
   INFO("Done");
-  __________;
 return 0;
 }
