@@ -1,4 +1,5 @@
 #pragma once
+
 /** @brief Debug class to display and track construction/destruction
  *
  * This class is useful for debugging new classes. Just instantiate from it to
@@ -170,3 +171,5 @@ private:
       << std::endl;
   }
 };
+
+//TAF! vim:nospell

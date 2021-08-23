@@ -1,3 +1,5 @@
+#pragma once
+
 /** @brief Serialize your class objects with a unique identifiers
   
  Add serial numbers to your classes by simply instantiating or inheriting this
@@ -13,8 +15,7 @@
  Moving is not worth the effort.
 
 */
-#ifndef UNIQUEID_HPP
-#define UNIQUEID_HPP
+
 #include <cstddef>
 #include <string>
 #include <stdexcept>
@@ -104,4 +105,5 @@ private:
   inline static std::string s_prefix = "";
   size_t s_next() const { static size_t id=start; return id++; }
 };
-#endif/*UNIQUEID_HPP*/
+
+//TAF! vim:nospell

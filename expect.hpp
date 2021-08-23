@@ -1,7 +1,9 @@
+#pragma once
+
 /** @brief Simple test methodology
  *
  * `EXPECT( expression );` expects the expression to be true, but if not an
- * error count will incremented and a message issued to `std::cerr`.
+ * error count will incremented and a message issued to standard error.
  *
  * Obtain a summary and a proper exit value for main by calling
  * `Expect::summary()`.
@@ -12,20 +14,16 @@
  * it or decrement it as needs dictate..
  *
  */
-#ifndef EXPECT_HPP
-#define EXPECT_HPP
-
 #include <iostream>
 #include <string>
 
-class Expect
+namespace Expect
 {
-public:
-  static size_t& checks() { static size_t count = 0u; return count; }
-  static size_t& errors() { static size_t count = 0u; return count; }
-  static bool&   passed() { static bool status = true; return status; }
+  [[maybe_unused]] static size_t& checks() { static size_t count = 0u; return count; }
+  [[maybe_unused]] static size_t& errors() { static size_t count = 0u; return count; }
+  [[maybe_unused]] static bool&   passed() { static bool status = true; return status; }
 
-  static void error(std::string message, const std::string& file="", int line=0)
+  [[maybe_unused]] static void error(std::string message, const std::string& file="", int line=0)
   {
     ++Expect::errors();
     if( auto pos = message.find_first_of('#'); pos != std::string::npos )
@@ -39,7 +37,7 @@ public:
     std::cerr << std::endl;
   }
 
-  static int summary(const std::string& prefix="")
+  [[maybe_unused]] static int summary(const std::string& prefix="")
   {
     std::cout << Expect::checks() << " checks performed." << std::endl;
     std::cout << Expect::errors() << " errors detected." << std::endl;
@@ -48,7 +46,7 @@ public:
     else                      std::cout << "FAIL" << std::endl;
     return (Expect::errors() == 0)?0:1;
   }
-};
+}
 
 #define EXPECT(expr) do { \
   ++Expect::checks(); \
@@ -56,4 +54,4 @@ public:
     Expect::error( std::string("unexpected ")+ #expr, __FILE__, __LINE__ ); \
 } while(0)
 
-#endif/*EXPECT_HPP*/
+//TAF! vim:nospell

@@ -17,3 +17,5 @@ std::string to_string (const T& v, const std::string& sep=" "s) {
     }
     return result;
 }
+
+//TAF! vim:nospell

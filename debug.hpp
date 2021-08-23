@@ -1,4 +1,4 @@
-#ifndef DEBUG_HPP
+#pragma once
 
 // Simple debug macro
 // - Set DEBUG_LEVEL or accept default of 50
@@ -44,5 +44,4 @@
 #  define DEBUG_ENABLED false /* Useful to detect if debug is on */
 #endif
 
-#define DEBUG_HPP
-#endif/*DEBUG_HPP*/
+//TAF! vim:nospell

@@ -91,3 +91,5 @@ namespace {
   #define __________    fmt::print("{}\n", std::string(line_width,'_'))
   #define BLANK_LINE    fmt::print("\n")
 #endif
+
+//TAF! vim:nospell
