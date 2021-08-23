@@ -15,13 +15,13 @@ set ( CMAKE_CXX_STANDARD 17 CACHE STRING
 set ( CMAKE_CXX_STANDARD_REQUIRED 17 CACHE BOOL
      "The with CMAKE_CXX_STANDARD selected C++ standard is a requirement." )
 
+add_executable( uniqueid usage.cpp )
+target_compile_definitions( uniqueid PUBLIC USE_IOSTREAM UNIQUEID_SELFTEST )
+
 add_executable( noisy1 usage.cpp )
 target_compile_definitions( noisy1 PUBLIC USE_IOSTREAM NOISY1_SELFTEST )
 
 add_executable( noisy2 usage.cpp )
 target_compile_definitions( noisy2 PUBLIC USE_IOSTREAM NOISY2_SELFTEST )
-
-add_executable( uniqueid usage.cpp )
-target_compile_definitions( uniqueid PUBLIC USE_IOSTREAM UNIQUEID_SELFTEST )
 
 # vim:nospell
