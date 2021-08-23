@@ -1,3 +1,4 @@
+#pragma once
 /** @brief Debug class to display and track construction/destruction
  *
  * This class is useful for debugging new classes. Just instantiate from it to
@@ -8,8 +9,7 @@
  * includes the address of the original object to aid debug when segfaults
  * from other causes occur. This class was designed to not throw.
  */
-#ifndef NOISY_HPP
-#define NOISY_HPP
+
 #include <sstream>
 #include <ostream>
 #include <utility>
@@ -170,5 +170,3 @@ private:
       << std::endl;
   }
 };
-
-#endif/*NOISY_HPP*/
