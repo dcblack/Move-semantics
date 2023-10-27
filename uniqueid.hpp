@@ -1,16 +1,16 @@
 #pragma once
 
-/** @brief Serialize your class objects with a unique identifiers
+/** @brief Serialize your class objects with unique identifiers
   
  Add serial numbers to your classes by simply instantiating or inheriting this
- class template. Nominally uses CRT to derived a unique serial number class.
- You can also created shared serial numbers. See `uniqueid.cpp` for examples. It
+ class template. Nominally uses CRT to derive a unique serial number class.
+ You can also create shared serial numbers. See `uniqueid.cpp` for examples. It
  is **not** recommended to inherit since this class overloads `operator()` and
  might be unexpected.
 
- `UniqueId`'s intentionally are unique, so copying _moves_ the id and invalidates
+ `UniqueId`'s are unique, so copying _moves_ the id and invalidates
  the value on the source object. Checking is enabled by default, but you can turn
- it off when requesting by specifying the optional check as false.
+ it off when requested by specifying the optional check as false.
 
  Moving is not worth the effort.
 
